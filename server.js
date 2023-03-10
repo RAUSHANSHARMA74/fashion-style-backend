@@ -19,13 +19,14 @@ app.use(authorization)
 
 
 
+let port = process.env.port || 4000
 
-app.listen(process.env.port, async ()=>{
+app.listen(port, async ()=>{
     try {
         await connection
         console.log("connect to DataBase")
     } catch (error) {
         console.log("something wrong in port")
     }
-    console.log(`server in running on port ${process.env.port}`)
+    console.log(`server in running on port ${port}`)
 })
